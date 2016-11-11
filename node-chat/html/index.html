@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h9聊天室-beta版</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div class="chat">
+        <h2>欢迎来到h5大世界  当前在线人数<span>0</span></h2>
+        <ul>
+
+        </ul>
+    </div>
+<form>
+    <input type="text" class="message">
+    <input type="button" value="发送" class="btn"/>
+</form>
+
+</body>
+<script src="../socket.io/socket.io.js"></script>
+<script>
+    var socket=io('http://10.80.16.238:3000');
+    var span=document.querySelector('span');
+    var btn=document.querySelector('.btn');
+    var list=document.querySelector('ul');
+    var info=document.querySelector('.message');
+    btn.onclick=function(ev){
+        ev.preventDefault();
+        var message=info.value;
+        socket.emit('message',{info:message});
+    }
+    socket.on('news',function(data){
+        var num=data.num;
+        var say=data.say;
+        var li=document.createElement('li');
+        li.innerHTML=say;
+        list.appendChild(li);
+        span.innerHTML=num;
+    })
+</script>
+</html>

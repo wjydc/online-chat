@@ -1,0 +1,43 @@
+body{
+    margin: 0 auto;
+    background-color:lightgray;
+}
+.chat{
+    width:800px;
+    min-height:400px;
+    background-color:lightblue;
+    margin: 0 auto;
+}
+
+.chat h2{
+    height:40px;
+    line-height: 40px;
+    background-color:gold;
+    font-size: 20px;
+    text-align: center;
+}
+ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    height:30px;
+    line-height: 30px;
+    font-size: 20px;
+}
+form{
+    width:800px;
+    margin:50px auto;
+}
+.message{
+    width:600px;
+    height:60px;
+    font-size:20px;
+}
+.btn{
+    width:100px;
+    height:30px;
+    background-color: aqua;
+    font-size:20px;
+}
